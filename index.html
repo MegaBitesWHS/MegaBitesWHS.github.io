@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MegaBites</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="assets\Logo-transparent-Orange.png">
+  </head>
+  
+
+
+
+
+  <body>
+    <!-- color pallet link https://coolors.co/94b9af-086788-942911-edc01d -->
+    <div class="flex-container">
+      <div>
+        <a id="top"></a>
+
+        <!-- Top image -->
+        <div id="homeBKG">
+          <!-- <img id="smallLogo" src="assets\Logo-transparent-Orange.png"> -->
+          <p id="mainTitle">MegaBites</p>
+        </div>
+      </div>
+    
+      <div class="nav-flex">
+        <a id="navBar" class="navClass" href="order.html">Order Now!</a>
+        <a href="#aboutLink" class="navClass">About<br>
+        <i class="arrow down"></i></a>
+        <a href="#faqLink" class="navClass">FAQ<br>
+        <i class="arrow down"></i></a>
+      </div>
+      
+
+      <!-- About section in this divider -->
+      <div class="item-flex" id="aboutLink">
+        <div id="aboutSection">
+          <!-- Filler Paragraph -->
+          <img id="groupPhoto" src="assets/group-photo.JPG">
+          <h1 id="aboutTitle">About</h1>
+          <p id="aboutParagraph">This project is a collaboration between the students in Mrs. Hodges' Programming Practicum class and the students in Ms. Templin's Human Studies Practicum class.  Ms. Templin's students are planning, creating and packaging the meals.  Mrs. Hodges' students are creating and maintaining this website using their HTML, CSS, and JavaScript skills.</p>
+        </div>
+        
+      </div>
+
+      <!-- FAQ in this devider -->
+      <div id="faqLink">
+        <h1>FAQ</h1>
+      
+        <div id="faqStyle">
+          <div class="faq-border">
+            <button class="faq-style" onclick="myFunction('faq1')">What methods of payment do you accept?<br><i class="arrow down ar-black"></i></button>
+            <div id="faq1" class="faq-an" style="display:none;">
+              SchoolCash Online only.
+            </div>
+          </div>
+
+          <div class="faq-border">
+            <button class="faq-style" onclick="myFunction('faq2')">Why can I only order one meal?<br><i class="arrow down ar-black"></i></button>
+            <div id="faq2" class="faq-an" class="faq-an" style="display:none;">
+              Because of supply concerns at this time, we are only allowing teachers to order one meal.
+            </div>
+          </div>
+
+          <div class="faq-border">
+            <button class="faq-style" onclick="myFunction('faq3')">How long will you be doing this?<br><i class="arrow down ar-black"></i></button>
+            <div id="faq3" class="faq-an" style="display:none;">
+              The continuation of this program is contingent on your support!
+            </div>
+          </div>
+          
+          <div class="faq-border">
+            <button class="faq-style" onclick="myFunction('faq4')">How do I get my food?<br><i class="arrow down ar-black"></i></button>
+            <div id="faq4" class="faq-an" style="display:none;">
+              You can pick up your food in room 133 or we can deliver to your room before lunch.
+            </div>
+          </div>
+        </div>
+            
+      </div>
+
+    </div>
+
+
+
+  <!--back to top button and joke copyright-->
+    <div>
+    <a href="#top">Back to top</a>
+    </div>
+
+  <script>
+    function myFunction(idName) {
+      var x = document.getElementById(idName);
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+  </body>
+</html>

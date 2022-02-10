@@ -1,0 +1,372 @@
+<!-- Update Venmo info line 86 --><!-- Food information Starts line 36 -->
+<!-- DONT MESS WITH SCRIPTS OF THIS PAGE -->
+<!-- Scripts are at bottom due to the page needing to load before it can run the getElementById function and not return null. It will break if you put it in the scripts file -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>MegaBites</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- tab icon -->
+    <link rel="icon" type="image/x-icon" href="assets\Logo-transparent.png">
+  </head>
+
+  <body>
+  
+  
+  <a id="top"></a>
+  <!--Nav Bar -->
+  <div class="flex-container">
+    <div id="mainForm" class="nav-flex">
+        <a id="navBar" href="index.html" class="navClass">Home</a>    
+    </div>
+
+    <!-- Order form from Formspark -->
+
+    <!-- test image link https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg -->
+    <div class="tab active orderFormStyle" style="">
+      <!-- add in after button testing to form tag 
+      action="https://submit-form.com/ugCq8Elw" -->
+      <form onsubmit="countSubmit()">
+        
+        <!-- Food order -->
+        <div class="tab active">
+          <div id="foodIntro" class="item-flex">
+            <img id="foodImage" src="assets/food.jpg">
+
+            <div>
+              <h2>Ketacos</h2>
+              <p>Please only submit one order<br>Ordering closes at 8:30am on Tuesday, Feb 14th<br> Food will be handed out on Thursday, Feb 17th</p>
+            </div>
+            
+          </div>
+
+          <!-- Order Options -->
+          <div id="orderOption">
+            <h3>Customization</h3>
+            
+            <div>
+              <input type="radio" id="item-1" name="food_option1" value="Option 1">
+              <label for="item-1">
+                Mission Carb Tortilla 
+              </label>
+            </div>
+
+            <div>
+              <input type="radio" id="item-2" name="food_option2" value="Option 2">
+              <label for="item-2">
+                Romaine Leaf Lettuce  
+              </label>
+            </div>
+
+            <!-- Ingredients -->
+            <div>
+              <h3>Ingredients</h3>
+              <p>Uncheck box for items you want to exclude</p>
+              
+              <div class="flex-container">
+
+                <div>
+                  <input type="checkbox" id="ingredient-1" name="ingredient-1" value="ingredient-1" checked>
+                  <label for="ingredient-1">
+                    Ground Turkey Burger 
+                  </label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="ingredient-2" name="ingredient-2" value="ingredient-2" checked>
+                  <label for="ingredient-2">
+                    Shredded Mexican Blend Cheese  
+                  </label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="ingredient-3" name="ingredient-3" value="ingredient-3" checked>
+                  <label for="ingredient-3">
+                    Shredded Lettuce  
+                  </label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="ingredient-4" name="ingredient-4" value="ingredient-4" checked>
+                  <label for="ingredient-4">
+                    Diced Tomatoes 
+                  </label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="ingredient-5" name="ingredient-5" value="ingredient-5" checked>
+                  <label for="ingredient-5">
+                    Diced Avocado  
+                  </label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="ingredient-6" name="ingredient-6" value="ingredient-6" checked>
+                  <label for="ingredient-6">
+                    Skillet Onions  
+                  </label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="ingredient-7" name="ingredient-7" value="ingredient-7" checked>
+                  <label for="ingredient-7">
+                    Sour Cream  
+                  </label>
+                </div>
+
+              </div>
+
+              <h3>Optional Sides</h3>
+
+              <div>
+                <div>
+                  <input type="checkbox" id="side-1" name="side-1" value="side-1">
+                  <label for="side-1">
+                    Walden farms honey mustard (no sugar, no fat) 
+                  </label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="side-2" name="side-2" value="side-2">
+                  <label for="side-2">
+                    Hidden valley secret spicy sauce 
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            
+            <p></p>
+            <div>
+              <input type="checkbox" id="drinkBox" name="drink" onclick="revealDrink()">
+              <label for="drinkBox">Drink (adds $1.00)</label>
+            </div>
+
+            <!-- Drinks -->
+            <div id="drinkOptions" style="display:none">
+              <div>
+                <input type="radio" id="drink-1" name="drink_option1" value="drink 1">
+                <label for="drink-1">Drink 1</label>
+              </div>
+
+              <div>
+                <input type="radio" id="drink-2" name="drink_option2" value="drink 2">
+                <label for="drink-2">Drink 2</label>
+              </div>
+
+            </div>
+
+            <div>
+              <!-- <lable for="addInfo">Additional information</lable>
+              <input type="text" id="addInfo" name="AdditionalInformation"> -->
+              <h3>Additional Information</h3>
+              <textarea id="addInfo"></textarea>
+            </div>
+
+            <button type="button" id="nextBtn">Next &gt;</button> 
+          </div>
+        </div>
+
+        <!-- Order information -->
+        <div class="tab">
+          <!-- First name -->
+          
+          <div>
+            <aside style="float:right;">
+              <div id="priceSection">
+                <p>Your price is:</p>
+                <p id="priceDisplay">$5</p>
+              </div>
+            </aside>
+          </div>
+          
+          <div>
+            <Label for="firstName">First Name</Label><br>
+            <input type="text" id="firstName"name="FirstName" placeholder="First Name">
+
+          </div>
+          
+          
+          <!-- Last name -->
+          <div>
+            <Label for="lastName">Last Name</Label><br>
+            <input type="text" id="lastName"name="LastName" placeholder="Last Name">
+          </div>
+
+          <!-- Room num -->
+          <div>
+            <Label for="roomNum">Room Number</Label><br>
+            <input type="text" id="roomNum"name="RoomNumber" placeholder="Room Number">
+          </div>
+
+
+          
+          
+
+          <!-- Pay online checkbox -->
+          <div>
+            <input type="checkbox" id="paymentBox" name="OnlinePayCheckbox" onclick="revealOption()">
+            <label for="paymentBox">Check if you wish to pay online (If not you can pay cash when you get your food)</label>
+          </div>
+
+          <!-- Pay online tab -->
+          <!-- This is where Venmo information will go -->
+          <div id="outputText" style="display:none">
+            <p>Venmo info goes here</p>
+          </div>
+
+
+          <button type="button" id="prevBtn">&lt; Previous</button> 
+          <button type="submit" class="submit-btn">Submit</button>
+
+          <p id=checkPrice></p>
+
+        </div>
+
+        
+      </form>
+      <a href="#top">Back to top</a>
+    </div>
+
+  
+    <div id="orderClosed" style="display:none;">
+      <h1>Orders are closed!<br>Please come back next week for our next selection</h1>
+    </div>    
+    
+    
+
+
+  
+  </div>
+
+
+
+
+<!-- No touchy -->
+<!-- JS for next and previous buttons -->
+<script>
+  var countSubNum = 0;
+  var formOpen = document.getElementById("mainForm");
+  var formClosed = document.getElementById("orderClosed")
+  function countSubmit(){
+    countSubNum++;
+    if (countSubNum <=3){
+      formOpen.style.display ="none";
+      formClosed.style.display = "block";
+    }else{
+      formOpen.style.display ="block";
+      formClosed.style.display = "none";
+    }
+  }
+
+  var next = document.getElementById("nextBtn")
+  var prev = document.getElementById("prevBtn")
+  const steps=Array.from(document.querySelectorAll("form .tab"))
+
+  window.onload=function(){
+    next.addEventListener("click", switchActive)
+    prev.addEventListener("click", switchPrev)
+  }
+
+  function switchActive(){
+    steps[0].classList.remove("active")
+    steps[1].classList.add("active")
+  }
+
+  function switchPrev(){
+    steps[0].classList.add("active")
+    steps[1].classList.remove("active")
+  }
+
+
+  // Checkbox reveal online payment
+  function revealOption(){
+
+    var checkBox = document.getElementById("paymentBox");
+    var text = document.getElementById("outputText");
+
+    if (checkBox.checked == true){
+    text.style.display = "block";
+    } else {
+    text.style.display = "none";
+    }
+  }
+
+  function revealDrink(){
+    
+    var drinkCheck = document.getElementById("drinkBox");
+    var options = document.getElementById("drinkOptions");
+
+    if (drinkCheck.checked == true){
+    // options.style.display = "block";
+    document.getElementById("priceDisplay").innerHTML="$6";
+    } else {
+    // options.style.display = "none";
+    document.getElementById("priceDisplay").innerHTML="$5";
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+  // // price calculation 
+
+  // var scrunklyPriceCalc =[];
+
+  // document.getElementById(item-1).addEventListener('click',addPrice(5, 'item-1'))
+
+  // document.getElementById(item-2).addEventListener('click',addPrice(8, 'item-2'))
+
+
+  // // add to the array the price 
+  // function addPrice(x, idName){
+  //   scrunklyPriceCalc.push(x)
+  //   document.getElementById(idName).removeEventListener('click',addPrice(x, idName))
+  //   document.getElementById(idName).addEventListener('click',subPrice(x, idName))
+  // }
+
+  // //subtract array
+  // function subPrice(x, idName){
+  //   var y = x * -1;
+  //   scrunklyPriceCalc.push(y)
+  //   document.getElementById(idName).removeEventListener('click',subPrice(x, idName))
+  //   document.getElementById(idName).addEventListener('click',addPrice(x, idName))
+  // }
+
+  // function getPrice(){
+
+  //   var count = 0;
+  //   var arrayLen = scrunklyPriceCalc.length;
+
+
+  //   for(var i = 0; i < arrayLen; i++){
+  //       if(i==0){
+  //           count = scrunklyPriceCalc[i];
+  //       }else{
+  //           count = count + scrunklyPriceCalc[i];
+  //       } 
+  //   }
+    
+  // }
+
+  
+
+  // document.getElementById("checkPrice").innerHTML = count;
+
+  
+
+</script>
+
+
+</body>
+</html>
