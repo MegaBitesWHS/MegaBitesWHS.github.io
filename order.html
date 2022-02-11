@@ -25,11 +25,11 @@
 
     <!-- Order form from Formspark -->
 
-    <!-- test image link https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg -->
+    
     <div class="tab active orderFormStyle" style="">
       <!-- add in after button testing to form tag 
       action="https://submit-form.com/ugCq8Elw" -->
-      <form onsubmit="countSubmit()">
+      <form onsubmit="countSubmit()" action="https://submit-form.com/ugCq8Elw">
         
         <!-- Food order -->
         <div class="tab active">
@@ -38,14 +38,14 @@
 
             <div>
               <h2>Ketacos</h2>
-              <p>Please only submit one order<br>Ordering closes at 8:30am on Tuesday, Feb 14th<br> Food will be handed out on Thursday, Feb 17th</p>
+              <p><b>$5</b><br>Please only submit one order<br>Ordering closes at 8:30am on Tuesday, Feb 15th<br> Food will be handed out on Thursday, Feb 17th</p>
             </div>
             
           </div>
 
           <!-- Order Options -->
           <div id="orderOption">
-            <h3>Customization</h3>
+            <h3>Choose Your Wrap</h3>
             
             <div>
               <input type="radio" id="item-1" name="food_option1" value="Option 1">
@@ -125,14 +125,14 @@
                 <div>
                   <input type="checkbox" id="side-1" name="side-1" value="side-1">
                   <label for="side-1">
-                    Walden farms honey mustard (no sugar, no fat) 
+                    Walden Farms honey mustard (no sugar, no fat) 
                   </label>
                 </div>
 
                 <div>
                   <input type="checkbox" id="side-2" name="side-2" value="side-2">
                   <label for="side-2">
-                    Hidden valley secret spicy sauce 
+                    Hidden Valley secret spicy sauce 
                   </label>
                 </div>
               </div>
@@ -141,7 +141,7 @@
             
             <p></p>
             <div>
-              <input type="checkbox" id="drinkBox" name="drink" onclick="revealDrink()">
+              <input type="checkbox" id="drinkBox" name="drink" onclick="drinkCheckbox()">
               <label for="drinkBox">Drink (adds $1.00)</label>
             </div>
 
@@ -163,10 +163,11 @@
               <!-- <lable for="addInfo">Additional information</lable>
               <input type="text" id="addInfo" name="AdditionalInformation"> -->
               <h3>Additional Information</h3>
+              <p>(Allergy information, Order Specifications,ect..)</p>
               <textarea id="addInfo"></textarea>
             </div>
 
-            <button type="button" id="nextBtn">Next &gt;</button> 
+            <button type="button" id="nextBtn" class="orderFormButton orderFormButton1">Next &gt;</button> 
           </div>
         </div>
 
@@ -175,12 +176,12 @@
           <!-- First name -->
           
           <div>
-            <aside style="float:right;">
+            
               <div id="priceSection">
                 <p>Your price is:</p>
                 <p id="priceDisplay">$5</p>
               </div>
-            </aside>
+            
           </div>
           
           <div>
@@ -207,10 +208,16 @@
           
 
           <!-- Pay online checkbox -->
-          <div>
+          <!-- <div>
             <input type="checkbox" id="paymentBox" name="OnlinePayCheckbox" onclick="revealOption()">
             <label for="paymentBox">Check if you wish to pay online (If not you can pay cash when you get your food)</label>
-          </div>
+          </div> -->
+
+         <div>
+           <p>Pay here<b>(return to this page and hit submit)</b>:</p>
+           <a id="noDrink" style="display:block;" href="https://knoxschools.schoolcashonline.com/Fee/Details/22170/231/False/True" target="_blank">https://knoxschools.schoolcashonline.com/Fee/Details/22170/231/False/True</a>
+           <a id="yesDrink" style="display:none;" href="https://knoxschools.schoolcashonline.com/Fee/Details/22169/231/False/True" target="_blank">https://knoxschools.schoolcashonline.com/Fee/Details/22169/231/False/True</a>
+         </div>
 
           <!-- Pay online tab -->
           <!-- This is where Venmo information will go -->
@@ -219,8 +226,8 @@
           </div>
 
 
-          <button type="button" id="prevBtn">&lt; Previous</button> 
-          <button type="submit" class="submit-btn">Submit</button>
+          <button type="button" id="prevBtn" class="orderFormButton orderFormButton1">&lt; Previous</button> 
+          <button type="submit" class="submit-btn orderFormButton orderFormButton1">Submit</button>
 
           <p id=checkPrice></p>
 
@@ -228,7 +235,7 @@
 
         
       </form>
-      <a href="#top">Back to top</a>
+      
     </div>
 
   
@@ -248,19 +255,39 @@
 <!-- No touchy -->
 <!-- JS for next and previous buttons -->
 <script>
-  var countSubNum = 0;
-  var formOpen = document.getElementById("mainForm");
-  var formClosed = document.getElementById("orderClosed")
-  function countSubmit(){
-    countSubNum++;
-    if (countSubNum <=3){
-      formOpen.style.display ="none";
-      formClosed.style.display = "block";
+  // var countSubNum = 0;
+  // var formOpen = document.getElementById("mainForm");
+  // var formClosed = document.getElementById("orderClosed")
+  // function countSubmit(){
+  //   countSubNum++;
+  //   if (countSubNum <=3){
+  //     formOpen.style.display ="none";
+  //     formClosed.style.display = "block";
+  //   }else{
+  //     formOpen.style.display ="block";
+  //     formClosed.style.display = "none";
+  //   }
+  // }
+
+  function changeLink(){
+    var noD = document.getElementById("noDrink")
+    var yesD = document.getElementById("yesDrink")
+    if (document.getElementById("drinkBox").checked){
+      noD.style.display ="none";
+      yesD.style.display ="block";
     }else{
-      formOpen.style.display ="block";
-      formClosed.style.display = "none";
+      noD.style.display ="block";
+      yesD.style.display ="none";
     }
   }
+
+  function drinkCheckbox(){
+    changeLink()
+    revealDrink()
+  }
+
+
+
 
   var next = document.getElementById("nextBtn")
   var prev = document.getElementById("prevBtn")
