@@ -29,7 +29,7 @@
     <div class="tab active orderFormStyle" style="">
       <!-- add in after button testing to form tag 
       action="https://submit-form.com/ugCq8Elw" -->
-      <form onsubmit="countSubmit()" action="https://submit-form.com/ugCq8Elw">
+      <form onsubmit="countSubmit()">
         
         <!-- Food order -->
         <div class="tab active">
@@ -142,7 +142,7 @@
             <p></p>
             <div>
               <input type="checkbox" id="drinkBox" name="drink" onclick="drinkCheckbox()">
-              <label for="drinkBox">Drink (adds $1.00)</label>
+              <label for="drinkBox">Lemonade (adds $1.00)</label>
             </div>
 
             <!-- Drinks -->
@@ -163,7 +163,7 @@
               <!-- <lable for="addInfo">Additional information</lable>
               <input type="text" id="addInfo" name="AdditionalInformation"> -->
               <h3>Additional Information</h3>
-              <p>(Allergy information, Order Specifications,ect..)</p>
+              <p>(Allergy Information, Order Specifications,etc..)</p>
               <textarea id="addInfo"></textarea>
             </div>
 
@@ -226,8 +226,11 @@
           </div>
 
 
-          <button type="button" id="prevBtn" class="orderFormButton orderFormButton1">&lt; Previous</button> 
+          <button type="button" id="prevBtn" class="orderFormButton orderFormButton1">&lt; Previous</button>
+
+          
           <button type="submit" class="submit-btn orderFormButton orderFormButton1">Submit</button>
+          
 
           <p id=checkPrice></p>
 
