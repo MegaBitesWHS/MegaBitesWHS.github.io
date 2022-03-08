@@ -10,7 +10,7 @@
     <title>MegaBites</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <!-- tab icon -->
-    <link rel="icon" type="image/x-icon" href="assets\Logo-transparent-Orange.png">
+    <link rel="icon" type="image/x-icon" href="assets\Logo-transparent.png">
   </head>
 
   <body>
@@ -26,7 +26,7 @@
     <!-- Order form from Formspark -->
 
     
-    <div class="tab active orderFormStyle" style="display:block;">
+    <div class="tab active orderFormStyle" style="display:none">
       <!-- add in after button testing to form tag 
       action="https://submit-form.com/ugCq8Elw" -->
       <form onsubmit="countSubmit()" action="https://submit-form.com/ugCq8Elw">
@@ -37,15 +37,15 @@
             <img id="foodImage" src="assets/food.jpg">
 
             <div>
-              <h2>Air Fryer Chicken With Veggie Rice Combo</h2>
-              <p><b>$5</b><br>Please only submit one order<br>Ordering closes at <b>3:30pm on Tuesday, Mar 8th</b><br> Food will be handed out on <b>Thursday, Mar 10th</b></p>
+              <h2>Ketacos</h2>
+              <p><b>$5</b><br>Please only submit one order<br>Ordering closes at 8:30am on Tuesday, Feb 15th<br> Food will be handed out on Thursday, Feb 17th</p>
             </div>
             
           </div>
 
           <!-- Order Options -->
           <div id="orderOption">
-            <!-- <h3>Choose Your Wrap</h3>
+            <h3>Choose Your Wrap</h3>
             
             <div>
               <input type="radio" id="item-1" name="food_option1" value="Option 1">
@@ -59,42 +59,14 @@
               <label for="item-2">
                 Romaine Leaf Lettuce  
               </label>
-            </div> -->
-          
+            </div>
 
             <!-- Ingredients -->
             <div>
               <h3>Ingredients</h3>
-              <p style="font-size: 14px;">Due to the nature of this meal, there will be no substitutions or exclusions outside of the ones listed below.</p>
-              <ul>
-                <li>Air fried chicken</li>
-                <li>Whole Grain Brown Rice</li>
-                <li>Veggie Stir Fry</li>
-                <ul>
-                  <li>Mushroom</li>
-                  <li>Zucchini</li>
-                  <li>Broccoli</li>
-                </ul>
-              </ul>
-
-              <h4>Exclusions</h4>
-              <div>
-                  <input type="checkbox" id="no-veggies" name="no-veggies" value="no-veggies">
-                  <label for="no-veggies">
-                    No Veggies 
-                  </label>
-                </div>
-
-              <div>
-                  <input type="checkbox" id="no-rice" name="no-rice" value="no-rice">
-                  <label for="no-rice">
-                    No Rice 
-                  </label>
-                </div>
+              <p>Uncheck box for items you want to exclude</p>
               
-              <!-- <p>Uncheck box for items you want to exclude</p> -->
-              
-              <!-- <div class="flex-container">
+              <div class="flex-container">
 
                 <div>
                   <input type="checkbox" id="ingredient-1" name="ingredient-1" value="ingredient-1" checked>
@@ -145,7 +117,7 @@
                   </label>
                 </div>
 
-              </div> -->
+              </div>
 
               <h3>Optional Sides</h3>
 
@@ -153,16 +125,16 @@
                 <div>
                   <input type="checkbox" id="side-1" name="side-1" value="side-1">
                   <label for="side-1">
-                    Hidden Vally secret sauce (on the side) 
+                    Walden Farms honey mustard (no sugar, no fat) 
                   </label>
                 </div>
 
-                <!-- <div>
+                <div>
                   <input type="checkbox" id="side-2" name="side-2" value="side-2">
                   <label for="side-2">
                     Hidden Valley secret spicy sauce 
                   </label>
-                </div> -->
+                </div>
               </div>
             </div>
 
@@ -214,7 +186,7 @@
           
           <div>
             <Label for="firstName">First Name</Label><br>
-            <input type="text" id="firstName"name="FirstName" placeholder="First Name" required>
+            <input type="text" id="firstName"name="FirstName" placeholder="First Name">
 
           </div>
           
@@ -222,26 +194,15 @@
           <!-- Last name -->
           <div>
             <Label for="lastName">Last Name</Label><br>
-            <input type="text" id="lastName"name="LastName" placeholder="Last Name" required>
+            <input type="text" id="lastName"name="LastName" placeholder="Last Name">
           </div>
 
           <!-- Room num -->
           <div>
-            <Label for="roomNum">Room Number at 3R</Label><br>
-            <input type="text" id="roomNum"name="RoomNumber" placeholder="Room Number" required>
-          </div>
-          
-          <div>
-            <Label for="lunchPeriod">What lunch do you have?</Label><br>
-            <input type="text" id="lunchPeriod"name="LunchPeriod" placeholder="1st Lunch...">
+            <Label for="roomNum">Room Number</Label><br>
+            <input type="text" id="roomNum"name="RoomNumber" placeholder="Room Number">
           </div>
 
-          <div>
-            <input type="checkbox" id="noDelivery" name="No-Delivery" value="No-Delivery">
-            <label for="No-Delivery">
-              Check this box if you want to pick up your meal from Room 133 during 3R (Otherwise it will be delivered)
-            </label>
-          </div>
 
           
           
@@ -281,7 +242,7 @@
     </div>
 
   
-    <div id="orderClosed" style="display:none;">
+    <div id="orderClosed" style="display:block;">
       <h1>Orders are closed!<br>Please come back next week for our next selection</h1>
     </div>    
     
