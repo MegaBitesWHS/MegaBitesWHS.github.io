@@ -1,3 +1,7 @@
+<!-- Update Venmo info line 86 --><!-- Food information Starts line 36 -->
+<!-- DONT MESS WITH SCRIPTS OF THIS PAGE -->
+<!-- Scripts are at bottom due to the page needing to load before it can run the getElementById function and not return null. It will break if you put it in the scripts file -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +10,7 @@
     <title>MegaBites</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <!-- tab icon -->
-    <link rel="icon" type="image/x-icon" href="assets\Logo-transparent-Orange.png">
+    <link rel="icon" type="image/x-icon" href="assets\Logo-transparent.png">
   </head>
 
   <body>
@@ -22,87 +26,87 @@
     <!-- Order form from Formspark -->
 
     
-    <div class="tab active orderFormStyle" style="display:block;">
+    <div class="tab active orderFormStyle" style="display:none">
       <!-- add in after button testing to form tag 
       action="https://submit-form.com/ugCq8Elw" -->
       <form onsubmit="countSubmit()" action="https://submit-form.com/ugCq8Elw">
         
         <!-- Food order -->
         <div class="tab active">
-          <div id="foodIntro" class="item-flex" style="padding-left:20px;">
-<!--             <img id="foodImage" src="assets/food.jpg"> -->
+          <div id="foodIntro" class="item-flex">
+            <img id="foodImage" src="assets/food.jpg">
 
             <div>
-              <h2>Taco Bowl</h2>
-              <p><b>$5</b><br>Please only submit one order<br>Ordering closes at <b>10:00am on Tuesday, Mar 22th</b><br> Food will be handed out on <b>Wednesday, Mar 23th</b></p>
+              <h2>Ketacos</h2>
+              <p><b>$5</b><br>Please only submit one order<br>Ordering closes at 8:30am on Tuesday, Feb 15th<br> Food will be handed out on Thursday, Feb 17th</p>
             </div>
             
           </div>
 
           <!-- Order Options -->
           <div id="orderOption">
-              <h2>Ingredients</h2>
-              <p>Turkey Burger</p>
-            <p><b>Choose Your Rice</b></p>
+            <h3>Choose Your Wrap</h3>
             
             <div>
               <input type="radio" id="item-1" name="food_option1" value="Option 1">
               <label for="item-1">
-                White Rice 
+                Mission Carb Tortilla 
               </label>
             </div>
 
             <div>
               <input type="radio" id="item-2" name="food_option2" value="Option 2">
               <label for="item-2">
-                Whole Grain Rice   
+                Romaine Leaf Lettuce  
               </label>
             </div>
-            
-            
-            <p><b>Uncheck box for items you want to exclude</b></p>
+
+            <!-- Ingredients -->
+            <div>
+              <h3>Ingredients</h3>
+              <p>Uncheck box for items you want to exclude</p>
               
               <div class="flex-container">
 
                 <div>
                   <input type="checkbox" id="ingredient-1" name="ingredient-1" value="ingredient-1" checked>
                   <label for="ingredient-1">
-                    Black Beans 
+                    Ground Turkey Burger 
                   </label>
                 </div>
 
                 <div>
                   <input type="checkbox" id="ingredient-2" name="ingredient-2" value="ingredient-2" checked>
                   <label for="ingredient-2">
-                    Diced Tomatoes  
+                    Shredded Mexican Blend Cheese  
                   </label>
                 </div>
 
                 <div>
                   <input type="checkbox" id="ingredient-3" name="ingredient-3" value="ingredient-3" checked>
                   <label for="ingredient-3">
-                    Shredded Fiesta Cheese 
+                    Shredded Lettuce  
                   </label>
                 </div>
 
                 <div>
                   <input type="checkbox" id="ingredient-4" name="ingredient-4" value="ingredient-4" checked>
                   <label for="ingredient-4">
-                    Shredded Lettuce 
+                    Diced Tomatoes 
                   </label>
                 </div>
 
                 <div>
                   <input type="checkbox" id="ingredient-5" name="ingredient-5" value="ingredient-5" checked>
                   <label for="ingredient-5">
-                    Sauteed Onion & Pepper Mix
+                    Diced Avocado  
                   </label>
                 </div>
 
                 <div>
                   <input type="checkbox" id="ingredient-6" name="ingredient-6" value="ingredient-6" checked>
                   <label for="ingredient-6">
-                    Hidden Valley Secret Sauce  
+                    Skillet Onions  
                   </label>
                 </div>
 
@@ -114,16 +118,31 @@
                 </div>
 
               </div>
-          
 
-            
+              <h3>Optional Sides</h3>
+
+              <div>
+                <div>
+                  <input type="checkbox" id="side-1" name="side-1" value="side-1">
+                  <label for="side-1">
+                    Walden Farms honey mustard (no sugar, no fat) 
+                  </label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="side-2" name="side-2" value="side-2">
+                  <label for="side-2">
+                    Hidden Valley secret spicy sauce 
+                  </label>
+                </div>
+              </div>
+            </div>
 
             
             <p></p>
             <div>
-              <p><b>Drink</b></p>
               <input type="checkbox" id="drinkBox" name="drink" onclick="drinkCheckbox()">
-              <label for="drinkBox">Fruit Punch (adds $1.00)</label>
+              <label for="drinkBox">Lemonade (adds $1.00)</label>
             </div>
 
             <!-- Drinks -->
@@ -141,7 +160,8 @@
             </div>
 
             <div>
-              
+              <!-- <lable for="addInfo">Additional information</lable>
+              <input type="text" id="addInfo" name="AdditionalInformation"> -->
               <h3>Additional Information</h3>
               <p>(Allergy Information, Order Specifications,etc..)</p>
               <textarea id="addInfo"></textarea>
@@ -166,7 +186,7 @@
           
           <div>
             <Label for="firstName">First Name</Label><br>
-            <input type="text" id="firstName"name="FirstName" placeholder="First Name" required>
+            <input type="text" id="firstName"name="FirstName" placeholder="First Name">
 
           </div>
           
@@ -174,36 +194,29 @@
           <!-- Last name -->
           <div>
             <Label for="lastName">Last Name</Label><br>
-            <input type="text" id="lastName"name="LastName" placeholder="Last Name" required>
+            <input type="text" id="lastName"name="LastName" placeholder="Last Name">
           </div>
 
           <!-- Room num -->
           <div>
-            <Label for="roomNum">Room Number at 3R</Label><br>
+            <Label for="roomNum">Room Number</Label><br>
             <input type="text" id="roomNum"name="RoomNumber" placeholder="Room Number">
           </div>
-          
-          <div>
-            <Label for="lunchPeriod">What lunch do you have?</Label><br>
-            <input type="text" id="lunchPeriod"name="LunchPeriod" placeholder="1st Lunch...">
-          </div>
 
-          <div>
-            <input type="checkbox" id="noDelivery" name="No-Delivery" value="No-Delivery">
-            <label for="No-Delivery">
-              Check this box if you want to pick up your meal from Room 133 during 3R (Otherwise it will be delivered)
-            </label>
-          </div>
 
           
           
 
-          
+          <!-- Pay online checkbox -->
+          <!-- <div>
+            <input type="checkbox" id="paymentBox" name="OnlinePayCheckbox" onclick="revealOption()">
+            <label for="paymentBox">Check if you wish to pay online (If not you can pay cash when you get your food)</label>
+          </div> -->
 
          <div>
            <p>Pay here<b>(return to this page and hit submit)</b>:</p>
-           <a id="noDrink" style="display:block;" href="https://knoxschools.schoolcashonline.com/Fee/Details/22998/231/False/True" target="_blank">https://knoxschools.schoolcashonline.com/Fee/Details/22998/231/False/True</a>
-           <a id="yesDrink" style="display:none;" href="https://knoxschools.schoolcashonline.com/Fee/Details/23000/231/False/True" target="_blank">https://knoxschools.schoolcashonline.com/Fee/Details/23000/231/False/True</a>
+           <a id="noDrink" style="display:block;" href="https://knoxschools.schoolcashonline.com/Fee/Details/22170/231/False/True" target="_blank">https://knoxschools.schoolcashonline.com/Fee/Details/22170/231/False/True</a>
+           <a id="yesDrink" style="display:none;" href="https://knoxschools.schoolcashonline.com/Fee/Details/22169/231/False/True" target="_blank">https://knoxschools.schoolcashonline.com/Fee/Details/22169/231/False/True</a>
          </div>
 
           <!-- Pay online tab -->
@@ -229,7 +242,7 @@
     </div>
 
   
-    <div id="orderClosed" style="display:none;">
+    <div id="orderClosed" style="display:block;">
       <h1>Orders are closed!<br>Please come back next week for our next selection</h1>
     </div>    
     
